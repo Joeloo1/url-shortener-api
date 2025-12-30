@@ -1,14 +1,14 @@
 import mongoose, { Document, Schema } from "mongoose";
 
 export interface IUrl extends Document {
-  orginalUrl: string,
+  originalUrl: string,
   shortCode: string,
   clicks: number,
   createdAt: Date,
 }
 
 const urlSchema = new Schema<IUrl>({
-  orginalUrl: {
+  originalUrl: {
     type: String,
     required: true,
   },
