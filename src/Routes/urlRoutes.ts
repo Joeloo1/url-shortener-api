@@ -1,12 +1,11 @@
 import express from "express";
 
-import { shorten } from "../controller/urlController";
+import { shorten, redirect, getAllUrls} from "../controller/urlController";
 
 const router = express.Router();
 
-router
-    .route('/shorten')
-    .post(shorten)
-
+router.route("/shorten").post(shorten);
+router.route('/:shortCode').get(redirect);
+router.route('/api/v1/urls').get(getAllUrls);
 
 export default router;
